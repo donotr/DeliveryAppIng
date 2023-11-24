@@ -1,10 +1,14 @@
 
+import 'package:deliveryapp/src/models/user.dart';
+import 'package:deliveryapp/src/pages/home/home_page.dart';
 import 'package:deliveryapp/src/pages/login/login_page.dart';
 import 'package:deliveryapp/src/pages/register/register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+
+User userSession = User.fromJson(GetStorage().read('user')??{});
 void main() async{
   await GetStorage.init();
   runApp(const MyApp());
@@ -32,7 +36,8 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () =>  LoginPage()),
-        GetPage(name: '/register', page: () =>  RegisterPage())
+        GetPage(name: '/register', page: () =>  RegisterPage()),
+        GetPage(name: '/home', page: ()=> HomePage()),
       ],
       theme: ThemeData(
         primaryColor: Colors.amber,

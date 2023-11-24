@@ -2,7 +2,7 @@ import 'package:deliveryapp/src/environment/environment.dart';
 import 'package:deliveryapp/src/models/response_api.dart';
 import 'package:deliveryapp/src/models/user.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/connect.dart';
+
 
 class UsersProvider extends GetConnect {
 
